@@ -1,6 +1,10 @@
 import { motion } from "framer-motion"
+import { useNavigate } from "react-router-dom"
+import Icon from "@/components/ui/icon"
 
 export default function Overlay() {
+  const navigate = useNavigate()
+
   return (
     <div className="pointer-events-none absolute inset-0 z-10">
       <div className="absolute top-8 left-0 right-0 flex flex-col items-center gap-2">
@@ -20,6 +24,19 @@ export default function Overlay() {
         >
           & резка · точность до 0.1 мм
         </motion.p>
+      </div>
+
+      <div className="absolute top-8 right-8 pointer-events-auto">
+        <motion.button
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.2, delay: 1.0 }}
+          onClick={() => navigate("/albums")}
+          className="flex items-center gap-2 px-5 py-2.5 border border-white/20 rounded-full text-white/70 hover:text-white hover:border-white/50 transition-all duration-300 text-sm tracking-widest backdrop-blur-sm bg-white/5"
+        >
+          <Icon name="LayoutGrid" size={14} />
+          Альбомы
+        </motion.button>
       </div>
 
       <div className="absolute bottom-10 left-0 right-0 flex flex-col items-center gap-4">
