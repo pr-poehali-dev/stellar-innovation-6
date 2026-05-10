@@ -27,9 +27,17 @@ export default function LoadingScreen() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="font-serif text-4xl mb-4"
+          className="font-serif text-3xl mb-2 tracking-widest uppercase"
         >
-          Загрузка
+          Лазерная гравировка
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="font-sans text-sm text-white/40 tracking-widest mb-4"
+        >
+          Галерея работ
         </motion.div>
         <motion.div
           initial={{ scaleX: 0 }}
